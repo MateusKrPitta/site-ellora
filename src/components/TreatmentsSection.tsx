@@ -34,7 +34,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onSelectTr
             Procedimentos de Alto Valor para sua Expressão e Saúde
           </h2>
           <p className="text-ellora-deep/75 text-sm sm:text-base font-normal">
-            Conheça os 8 procedimentos fundamentados no rigor biomédico, na naturalidade e na recuperação da sua beleza de origem.
+            Conheça os 8 procedimentos fundamentados na excelência, na naturalidade e na recuperação da sua beleza de origem.
           </p>
         </div>
 
