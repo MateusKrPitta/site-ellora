@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Sparkles, RotateCcw, MessageCircle, CheckCircle } from 'lucide-react';
 import { QUIZ_QUESTIONS } from '../data/testimonials';
+import { getWhatsAppUrl } from '../data/contact';
 
 interface SkinQuizModalProps {
   isOpen: boolean;
@@ -132,7 +133,7 @@ export const SkinQuizModal: React.FC<SkinQuizModalProps> = ({ isOpen, onClose })
 
             <div className="pt-2 flex flex-col gap-3">
               <a
-                href={`https://wa.me/5567999999999?text=${encodeURIComponent(whatsappMessage)}`}
+                href={getWhatsAppUrl(whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 py-4 rounded-full bg-ellora-terracotta hover:bg-ellora-deep text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-lg"

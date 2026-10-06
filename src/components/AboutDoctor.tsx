@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { getWhatsAppUrl } from '../data/contact';
 
 export const AboutDoctor: React.FC = () => {
   const pillars = [
@@ -82,7 +83,7 @@ export const AboutDoctor: React.FC = () => {
             {/* Link de Agendamento */}
             <div className="pt-4 flex items-center justify-between flex-wrap gap-4">
               <a
-                href="https://wa.me/5567999999999?text=Ol%C3%A1%20Dra.%20Silvana%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Ellora."
+                href={getWhatsAppUrl('Olá Dra. Silvana, gostaria de agendar uma consulta na Clínica Ellora.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 text-ellora-terracotta font-semibold text-sm hover:text-ellora-deep transition-colors group"

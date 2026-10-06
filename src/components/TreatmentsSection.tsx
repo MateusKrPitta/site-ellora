@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Sparkles, Info } from 'lucide-react';
 import { TREATMENTS } from '../data/treatments';
 import { Treatment } from '../types';
+import { getWhatsAppUrl } from '../data/contact';
 
 interface TreatmentsSectionProps {
   onSelectTreatment: (treatment: Treatment) => void;
@@ -68,7 +69,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onSelectTr
                 <span>Fazer o Quiz de Procedimentos</span>
               </button>
               <a
-                href="https://wa.me/5567999999999?text=Ol%C3%A1%20Dra.%20Silvana%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Ellora."
+                href={getWhatsAppUrl('Olá Dra. Silvana, gostaria de agendar uma consulta na Clínica Ellora.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs uppercase tracking-wider font-semibold text-ellora-terracotta hover:text-ellora-deep transition-colors inline-flex items-center gap-1"
@@ -145,7 +146,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onSelectTr
                   </button>
 
                   <a
-                    href={`https://wa.me/5567999999999?text=${encodeURIComponent(treatment.whatsappMessage)}`}
+                    href={getWhatsAppUrl(treatment.whatsappMessage)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs font-bold text-ellora-terracotta hover:text-ellora-deep transition-colors inline-flex items-center gap-1"
@@ -178,7 +179,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onSelectTr
             </div>
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
-                href="https://wa.me/5567999999999?text=Ol%C3%A1%20Dra.%20Silvana%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Ellora."
+                href={getWhatsAppUrl('Olá Dra. Silvana, gostaria de agendar uma consulta na Clínica Ellora.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-ellora-terracotta hover:bg-ellora-deep text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md shrink-0"

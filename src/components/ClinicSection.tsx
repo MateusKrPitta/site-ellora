@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Lock, Sparkles, MapPin } from 'lucide-react';
+import { getWhatsAppUrl } from '../data/contact';
 
 export const ClinicSection: React.FC = () => {
   return (
@@ -40,7 +41,7 @@ export const ClinicSection: React.FC = () => {
 
             <div className="pt-2">
               <a
-                href="https://wa.me/5567999999999?text=Ol%C3%A1%20Dra.%20Silvana%2C%20gostaria%20de%20conhecer%20a%20Cl%C3%ADnica%20Ellora%20e%20agendar%20uma%20visita."
+                href={getWhatsAppUrl('Olá Dra. Silvana, gostaria de conhecer a Clínica Ellora e agendar uma visita.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-ellora-deep hover:bg-ellora-terracotta text-ellora-cream text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"

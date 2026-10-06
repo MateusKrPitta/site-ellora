@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Check, Clock, ShieldCheck, Sparkles, MessageCircle } from 'lucide-react';
 import { Treatment } from '../types';
+import { getWhatsAppUrl } from '../data/contact';
 
 interface TreatmentModalProps {
   treatment: Treatment | null;
@@ -93,7 +94,7 @@ export const TreatmentModal: React.FC<TreatmentModalProps> = ({ treatment, onClo
             Avaliação individual com horário privativo na Clínica Ellora.
           </p>
           <a
-            href={`https://wa.me/5567999999999?text=${encodeURIComponent(treatment.whatsappMessage)}`}
+            href={getWhatsAppUrl(treatment.whatsappMessage)}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-ellora-terracotta hover:bg-ellora-deep text-white font-semibold text-xs uppercase tracking-wider transition-colors shadow-md"

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageCircle } from 'lucide-react';
+import { getWhatsAppUrl } from '../data/contact';
 
 interface HeaderProps {
   onOpenQuiz: () => void;
@@ -65,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuiz }) => {
         {/* Action Button */}
         <div className="hidden sm:flex items-center shrink-0 ml-auto lg:ml-6">
           <a
-            href="https://wa.me/5567999999999?text=Ol%C3%A1%20Dra.%20Silvana%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Ellora."
+            href={getWhatsAppUrl('Olá Dra. Silvana, gostaria de agendar uma consulta na Clínica Ellora.')}
             target="_blank"
             rel="noopener noreferrer"
             className="whitespace-nowrap inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-ellora-terracotta hover:bg-ellora-deep text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
@@ -111,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuiz }) => {
               Quiz: Descobrir Protocolo Ideal
             </button>
             <a
-              href="https://wa.me/5567999999999?text=Ol%C3%A1%20Dra.%20Silvana%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Ellora."
+              href={getWhatsAppUrl('Olá Dra. Silvana, gostaria de agendar uma consulta na Clínica Ellora.')}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full bg-ellora-terracotta text-white text-xs font-bold uppercase tracking-wider shadow-md"

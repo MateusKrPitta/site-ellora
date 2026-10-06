@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle, Star, Sparkles, Building2, ShieldCheck } from 'lucide-react';
+import { getWhatsAppUrl } from '../data/contact';
 
 interface HeroProps {
   onOpenQuiz: () => void;
@@ -31,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz }) => {
             <div className="pt-2 space-y-2.5">
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5">
                 <a
-                  href="https://wa.me/5567999999999?text=Ol%C3%A1%20Dra.%20Silvana%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Ellora."
+                  href={getWhatsAppUrl('Olá Dra. Silvana, gostaria de agendar uma consulta na Clínica Ellora.')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-full bg-ellora-terracotta hover:bg-ellora-deep text-white font-semibold text-xs sm:text-sm tracking-wide text-center transition-all duration-300 shadow-luxury hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"

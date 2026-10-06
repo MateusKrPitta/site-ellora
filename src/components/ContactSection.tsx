@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Clock, Phone, Send, CheckCircle2 } from 'lucide-react';
 import { TREATMENTS } from '../data/treatments';
+import { getWhatsAppUrl, CLINIC_CONTACT } from '../data/contact';
 
 export const ContactSection: React.FC = () => {
   const [name, setName] = useState('');
@@ -14,7 +15,7 @@ export const ContactSection: React.FC = () => {
     const cleanPhone = whatsapp.replace(/\D/g, '');
     const message = `Olá Dra. Silvana! Meu nome é ${name} (${cleanPhone || whatsapp}). Gostaria de agendar uma consulta na Clínica Ellora para o procedimento: ${treatment}.${notes ? `\n\nObservação: ${notes}` : ''}`;
     
-    window.open(`https://wa.me/5567999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(getWhatsAppUrl(message), '_blank');
     setIsSubmitted(true);
   };
 
@@ -69,8 +70,9 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <p className="font-semibold text-ellora-deep">Central de Agendamento</p>
                   <p className="text-ellora-deep/75 font-normal mt-0.5">Recepção calorosa e suporte prioritário</p>
+                  <p className="text-xs font-bold text-ellora-deep mt-0.5">{CLINIC_CONTACT.phoneDisplay}</p>
                   <a
-                    href="https://wa.me/5567999999999?text=Ol%C3%A1%20Dra.%20Silvana%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Ellora."
+                    href={getWhatsAppUrl('Olá Dra. Silvana, gostaria de agendar uma consulta na Clínica Ellora.')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs font-semibold text-ellora-terracotta hover:underline inline-flex items-center gap-1 mt-1"

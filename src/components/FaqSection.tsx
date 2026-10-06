@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
 import { FAQS } from '../data/testimonials';
+import { getWhatsAppUrl } from '../data/contact';
 
 export const FaqSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -62,7 +63,7 @@ export const FaqSection: React.FC = () => {
             Ainda tem alguma dúvida específica sobre o seu caso?
           </p>
           <a
-            href="https://wa.me/5567999999999?text=Ol%C3%A1%20Dra.%20Silvana%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20os%20procedimentos%20da%20Cl%C3%ADnica%20Ellora."
+            href={getWhatsAppUrl('Olá Dra. Silvana, tenho uma dúvida sobre os procedimentos da Clínica Ellora.')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-ellora-terracotta hover:text-ellora-deep transition-colors"
